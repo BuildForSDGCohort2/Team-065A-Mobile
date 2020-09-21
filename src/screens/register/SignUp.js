@@ -12,6 +12,7 @@ import {
   Image,
 } from "react-native";
 import * as Animatable from "react-native-animatable";
+import { Container, Content, Picker, Item } from "native-base";
 import {
   FontAwesome,
   Feather,
@@ -29,6 +30,7 @@ export default function Home({ navigation }) {
     secureTextEntry: true,
     isValidUser: true,
     isValidPassword: true,
+    selected1: "key1",
   });
 
   const textInputChange = (val) => {
@@ -157,6 +159,38 @@ export default function Home({ navigation }) {
             </Animatable.View>
           ) : null}
         </View>
+        <Text
+          style={[
+            styles.text_footer,
+            {
+              marginTop: 15,
+            },
+          ]}
+        >
+          User type
+        </Text>
+        <View
+          style={{
+            marginTop: 2,
+            borderBottomWidth: 1,
+            borderBottomColor: "#f2f2f2",
+            // paddingBottom: 2,
+          }}
+        >
+          <Picker
+            iosHeader="Select one"
+            mode="dropdown"
+            selectedValue={data.selected1}
+            onValueChange={(select) => {
+              setData({ ...data, selected1: select });
+            }}
+          >
+            <Item label="Teacher" value="key0" />
+            <Item label="Student" value="key1" />
+            <Item label="School" value="key2" />
+            <Item label="Parent" value="key3" />
+          </Picker>
+        </View>
 
         <Text
           style={[
@@ -204,7 +238,7 @@ export default function Home({ navigation }) {
             </Text>
           </TouchableOpacity>
           {/* gcgcgc */}
-          <TouchableOpacity
+          {/* <TouchableOpacity
             // onPress={() => navigation.navigate("signup")}
             style={[
               styles.signUp,
@@ -232,7 +266,7 @@ export default function Home({ navigation }) {
             >
               SignUp with facebook
             </Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           {/* hgvngnff */}
           <TouchableOpacity
             onPress={() => navigation.navigate("Login")}

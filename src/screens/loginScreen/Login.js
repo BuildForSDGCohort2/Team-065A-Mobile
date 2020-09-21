@@ -14,6 +14,7 @@ import {
 import * as Animatable from "react-native-animatable";
 import { Entypo } from "react-native-vector-icons";
 import LinearGradient from "expo-linear-gradient";
+import { Container, Content, Picker } from "native-base";
 import { FontAwesome, Feather } from "@expo/vector-icons";
 import styles from "../../style/styles";
 
