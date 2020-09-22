@@ -15,15 +15,22 @@ import Signup from "./src/screens/register/SignUp";
 import Splash from "./src/screens/splash/Splash";
 import Login from "./src/screens/loginScreen/Login";
 import blow from "./src/screens/splash/blow";
+import * as SplashScreen from "expo-splash-screen";
+// import { SplashScreen } from "expo";
 const Stack = createStackNavigator();
 
+SplashScreen.preventAutoHideAsync()
+  .then((result) =>
+    console.log(`SplashScreen.preventAutoHideAsync() succeeded: ${result}`)
+  )
+  .catch(console.warn); // it's good to explicitly catch and inspect any error
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isReady: false };
-  }
-
+  state = { isReady: false };
   async componentDidMount() {
+    setTimeout(async () => {
+      await SplashScreen.hideAsync();
+    }, 2000);
+
     await Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
       Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf"),
@@ -31,6 +38,7 @@ class App extends Component {
     });
     this.setState({ isReady: true });
   }
+
   render() {
     if (!this.state.isReady) {
       return <AppLoading />;
