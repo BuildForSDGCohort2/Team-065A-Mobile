@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 // import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "mobx-react";
-import store from "./store";
+import store from "./src/store/store";
 
 import {
   CardStyleInterpolators,
@@ -19,6 +19,7 @@ import Splash from "./src/screens/splash/Splash";
 import Login from "./src/screens/loginScreen/Login";
 import blow from "./src/screens/splash/blow";
 import * as SplashScreen from "expo-splash-screen";
+import Student from "./src/screens/dashboard/student/Student";
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -53,6 +54,14 @@ class App extends Component {
                 headerShown: false,
               }}
             >
+              <Stack.Screen
+                name="student_dashboard"
+                component={Student}
+                options={{
+                  cardStyleInterpolator:
+                    CardStyleInterpolators.forHorizontalIOS,
+                }}
+              />
               <Stack.Screen
                 name="blow"
                 component={blow}

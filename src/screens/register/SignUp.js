@@ -100,7 +100,7 @@ function Home({ navigation, store }) {
 
   return (
     <SafeAreaView style={styles.sigincontainer}>
-      <StatusBar barStyle="light-content" backgroundColor="#2d3e50" />
+      <StatusBar barStyle="light-content" backgroundColor="#09822E" />
       <View
         // source={require("../img/quaBg.png")}
         style={styles.header}

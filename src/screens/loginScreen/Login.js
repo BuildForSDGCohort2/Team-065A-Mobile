@@ -96,7 +96,7 @@ function Home({ navigation, store }) {
 
   return (
     <View style={styles.sigincontainer}>
-      <StatusBar barStyle="light-content" backgroundColor="#2d3e50" />
+      <StatusBar barStyle="light-content" backgroundColor="#09822E" />
       <View style={styles.header}>
         <Image
           source={require("../../img/quaBwhite.png")}
