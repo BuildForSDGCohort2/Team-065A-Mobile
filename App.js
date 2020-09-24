@@ -17,7 +17,7 @@ import Splash from "./src/screens/splash/Splash";
 import Login from "./src/screens/loginScreen/Login";
 import blow from "./src/screens/splash/blow";
 import * as SplashScreen from "expo-splash-screen";
-import Store from "./Store";
+import store from "./Store";
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -45,7 +45,7 @@ class App extends Component {
       return <AppLoading />;
     } else {
       return (
-        <Provider store={Store}>
+        <Provider store={store}>
           <NavigationContainer>
             <Stack.Navigator
               screenOptions={{
