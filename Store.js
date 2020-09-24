@@ -20,8 +20,5 @@ decorate(Store, {
   UserLoginDetails: observable,
 });
 
-autorun(() => {
-  console.log("delay is", this.UserLoginDetails);
-});
 //export Store
 export default new Store();
