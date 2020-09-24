@@ -1,5 +1,5 @@
 // import observable from mobx
-import { observable, action, decorate } from "mobx";
+import { observable, action, decorate, autorun } from "mobx";
 
 //create a store with count observable
 class Store {
@@ -20,5 +20,8 @@ decorate(Store, {
   UserLoginDetails: observable,
 });
 
+autorun(() => {
+  console.log("delay is", this.UserLoginDetails);
+});
 //export Store
 export default new Store();

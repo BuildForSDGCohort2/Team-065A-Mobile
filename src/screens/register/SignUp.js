@@ -21,8 +21,9 @@ import {
 } from "@expo/vector-icons";
 import styles from "../../style/styles";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { inject, observer } from "mobx-react";
 
-export default function Home({ navigation }) {
+function Home({ navigation, store }) {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -295,3 +296,5 @@ export default function Home({ navigation }) {
     </SafeAreaView>
   );
 }
+
+export default inject("store")(observer(Home));

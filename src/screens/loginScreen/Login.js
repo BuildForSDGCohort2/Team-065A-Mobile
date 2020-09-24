@@ -20,9 +20,7 @@ import { Container, Content, Picker } from "native-base";
 import { FontAwesome, Feather } from "@expo/vector-icons";
 import styles from "../../style/styles";
 
-@inject("store")
-@observer
-export default function Home({ navigation }) {
+function Home({ navigation, store }) {
   const [data, setData] = React.useState({
     username: "",
     password: "",
@@ -231,3 +229,5 @@ export default function Home({ navigation }) {
     </View>
   );
 }
+
+export default inject("store")(observer(Home));

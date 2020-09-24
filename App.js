@@ -2,6 +2,9 @@ import { StyleSheet, Text, View } from "react-native";
 import React, { Component } from "react";
 
 // import { NavigationContainer } from "@react-navigation/native";
+import { Provider } from "mobx-react";
+import store from "./store";
+
 import {
   CardStyleInterpolators,
   createStackNavigator,
@@ -10,14 +13,12 @@ import {
 import { NavigationContainer } from "@react-navigation/native";
 import { AppLoading } from "expo";
 import * as Font from "expo-font";
-import { Provider } from "mobx-react";
 import { Ionicons } from "@expo/vector-icons";
 import Signup from "./src/screens/register/SignUp";
 import Splash from "./src/screens/splash/Splash";
 import Login from "./src/screens/loginScreen/Login";
 import blow from "./src/screens/splash/blow";
 import * as SplashScreen from "expo-splash-screen";
-import store from "./Store";
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -79,12 +80,3 @@ class App extends Component {
 }
 
 export default App;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
