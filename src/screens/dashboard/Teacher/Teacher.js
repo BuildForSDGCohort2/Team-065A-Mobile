@@ -27,7 +27,7 @@ const { width, height } = Dimensions.get("window");
 
 @inject("store")
 @observer
-export default class Student extends Component {
+export default class Teacher extends Component {
   state = { btnTopRight: false, bgActive: "", iconActive: "" };
   goToProfilepage = () => {
     this.setState({ bgActive: "#09822E", iconActive: "#fff" }, () => {
@@ -83,7 +83,7 @@ export default class Student extends Component {
           </Left> */}
               <Body>
                 <Title style={{ color: "#86bc42", fontSize: 25 }}>
-                  Student
+                  Teachers
                 </Title>
               </Body>
               <Right>

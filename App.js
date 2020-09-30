@@ -20,6 +20,7 @@ import Login from "./src/screens/loginScreen/Login";
 import blow from "./src/screens/splash/blow";
 import * as SplashScreen from "expo-splash-screen";
 import Student from "./src/screens/dashboard/student/Student";
+import Teacher from "./src/screens/dashboard/Teacher/Teacher";
 const Stack = createStackNavigator();
 
 class App extends Component {
@@ -54,6 +55,14 @@ class App extends Component {
                 headerShown: false,
               }}
             >
+              <Stack.Screen
+                name="Teacher_dashboard"
+                component={Teacher}
+                options={{
+                  cardStyleInterpolator:
+                    CardStyleInterpolators.forHorizontalIOS,
+                }}
+              />
               <Stack.Screen
                 name="student_dashboard"
                 component={Student}
